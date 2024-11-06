@@ -1,0 +1,73 @@
+/* From Uiverse.io by Yaya12085 */ 
+.form {
+    max-width: 320px;
+    width: 100%;
+    background-color: #000;
+    padding: 20px;
+    box-shadow: 0px 0px 0px 4px chartreuse;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 200px auto;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .label {
+    color: rgb(0, 0, 0);
+    margin-bottom: 4px;
+  }
+  
+  .input {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 93%;
+    font-size: 1rem;
+    color: #000;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .input:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px chartreuse;
+  }
+  
+  .input:valid {
+    border: 1px solid green;
+  }
+  
+  .input:invalid {
+    border: 1px solid rgba(14, 14, 14, 0.205);
+  }
+  
+  .submit {
+    background-color: chartreuse;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+      
+  .submit:hover{
+    scale: 1.02;
+  }
+  p{
+    text-align: center;
+    color: #fff;
+  }
+  a{
+    color: chartreuse;
+  }
