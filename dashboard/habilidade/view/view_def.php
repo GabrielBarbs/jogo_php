@@ -40,7 +40,7 @@ height:700px;
         <div class="text-white">
           <p>Valor Base:</p>
             <h3><?php echo $userdata['preco_hab']; ?></h3>
-            <p>Critico:</p>
+            <p>Benção:</p>
             <h3 style="margin_bottom:100px;"><?php if($userdata['critico'] == "1"){
                   echo "Fogo";
               }else if($userdata['critico'] == "2"){
@@ -81,7 +81,7 @@ height:700px;
           margin-top:600px; 
           width: 360px;
           margin-left: 560px;
-          position: absolute;' href='../edit/atk/geral.php?id=$id'>
+          position: absolute;' href='../edit/def/geral.php?id=$id'>
           <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
           <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
           <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z'/>
@@ -95,7 +95,7 @@ height:700px;
           margin-top:640px; 
           width: 120px;
           margin-left: 435px;
-          position: absolute;' href='view_level/level1.php?id=$id'>
+          position: absolute;' href='view_level_def/level1.php?id=$id'>
           Nivel 1
           <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-arrow-right-circle' viewBox='0 0 16 16'>
           <path fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z'/>
@@ -107,7 +107,7 @@ height:700px;
           margin-top:640px; 
           width: 120px;
           margin-left: 558px;
-          position: absolute;' href='view_level/level2.php?id=$id'>
+          position: absolute;' href='view_level_def/level2.php?id=$id'>
           Nivel 2
           <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-arrow-right-circle' viewBox='0 0 16 16'>
           <path fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z'/>
@@ -119,7 +119,7 @@ height:700px;
           margin-top:640px; 
           width: 120px;
           margin-left: 681px;
-          position: absolute;' href='view_level/level3.php?id=$id'>
+          position: absolute;' href='view_level_def/level3.php?id=$id'>
           Nivel 3
           <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-arrow-right-circle' viewBox='0 0 16 16'>
           <path fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z'/>
@@ -131,7 +131,7 @@ height:700px;
           margin-top:640px; 
           width: 120px;
           margin-left: 803px;
-          position: absolute;' href='view_level/level4.php?id=$id'>
+          position: absolute;' href='view_level_def/level4.php?id=$id'>
           Nivel 4
           <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-arrow-right-circle' viewBox='0 0 16 16'>
           <path fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z'/>
@@ -143,7 +143,7 @@ height:700px;
           margin-top:640px; 
           width: 120px;
           margin-left: 925px;
-          position: absolute;' href='view_level/level5.php?id=$id'>
+          position: absolute;' href='view_level_def/level5.php?id=$id'>
           Nivel 5
           <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-arrow-right-circle' viewBox='0 0 16 16'>
           <path fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z'/>

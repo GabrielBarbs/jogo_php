@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Customize the styling as needed */
+
+.user-details {
+    margin-top: 2rem; /* Add some margin for spacing */
+  }
+
+  .img-thumbnail {
+    margin-left: 220px;
+    width: 432px;
+    height: 432px; /* Ensure the image fills the column width */
+    object-fit: cover; /* Optional: Scale image to fill and crop */
+  }

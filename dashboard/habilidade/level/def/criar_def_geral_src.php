@@ -38,7 +38,7 @@ if (!isset($_POST['submit']) && !checa_habilidade_existe($db, $nome)) {
         $classe = "4";
     }
 
-    criar_habilidade_geral_atk($nome, $desc_geral, $nivel_ref, $classe, $imagem_loc, $preco_hab);
+    criar_habilidade_geral_def($nome, $desc_geral, $nivel_ref, $classe, $imagem_loc, $preco_hab);
 }else{
     echo("<h1> Habilidade ja existe! </h1>");
 

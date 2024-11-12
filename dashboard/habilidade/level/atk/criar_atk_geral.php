@@ -28,7 +28,7 @@ dashboard($usuario, $senha);
     }
     .table-bg{
         background: rgba(0,0,0,0.3);
-        height: 1000px;
+        height: 670px;
         border-radius:15px 15px 0 0;
     }
     </style>
