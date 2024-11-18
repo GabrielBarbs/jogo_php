@@ -31,13 +31,13 @@ if (!isset($_POST['submit'])) {
     
     if(isset($_FILES["photo"]) && !empty($_FILES["photo"])){
         $nome_aleatorio = uniqid('img_', true);
-        $extensao = pathinfo($_FILES['imagem_hab']['name'], PATHINFO_EXTENSION);
+        $extensao = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
         $novo_nome = $nome_aleatorio . '.' . $extensao;
 
-        $imagem = "/" . $novo_nome;
+        $imagem = "../../../../img/" . $novo_nome;
         $imagem_loc = "./img/". $novo_nome;
 
-        move_uploaded_file($_FILES["imagem_hab"]["tmp_name"] ,$imagem);
+        move_uploaded_file($_FILES["photo"]["tmp_name"] ,$imagem);
 
         editar_habilidade_geral_atk_foto($id, $nome, $desc_geral, $nivel_ref, $classe, $imagem_loc, $preco_hab);
     }else{

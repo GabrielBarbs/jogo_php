@@ -13,70 +13,59 @@ dashboard($usuario, $senha);
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-    body{
-    background: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
-    color: white;
-    text-align: center;
-
-    }
-    .table-bg{
-        background: rgba(0,0,0,0.3);
-        height: 670px;
-        border-radius:15px 15px 0 0;
-    }
-    </style>
+    <title>Tela de Edição</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="table-bg">
-        <h1>Habilidade Geral</h1>
-        <form action="criar_atk_geral_src.php" method="POST" enctype="multipart/form-data">
-            <p>Nome:</p>
-            <input type="text" name="nome" id="nome" placeholder="Digite o nome"required>
-            <br>
-            <p>Descriçao:</p>
-            <textarea name="desc_geral" id="desc_geral" placeholder="Digite a descriçao GERAL"required></textarea>
-            <br>
-            <p>Valor:</p>
-            <input type="text" name="preco_hab" id="preco_hab" placeholder="Digite o valor"required>
-            <br>
-            <p>Foto:</p>
-            <input type="file" name="imagem_hab">
-            <br>
-            
-            <p>Nivel referente:</p>
-            <select name="nivel_ref" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            </select>
-            <br>
-
-            <p>Critico:</p>
-            <select name="classe" required>
-            <option value="Fogo">Fogo</option>
-            <option value="Ar">Ar</option>
-            <option value="Agua">Agua</option>
-            <option value="Terra">Terra</option>
-            </select>
-            <br>
-            <button type="submit" style="margin-top:50px;">Proxima pagina (Nivel 1)</button>
+<body class="bg-dark bg-gradient text-white"  style="height:862px;">
+    <div class="container mt-5">
+        <h2 class="mb-4">Criar Habilidade</h2>
+        <form action="criar_atk_geral_Src.php" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="name" class="form-label" >Nome</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Digite nome"  required>
+            </div>
+            <div class="mb-3">
+                <label for="photo" class="form-label">Foto</label>
+                <input type="file" class="form-control" name="photo">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Descrição</label>
+                <input type="text" class="form-control input-large" id="description" name="description" rows="4" placeholder="Digite a descrição" required>
+            </div>
+            <div class="mb-3">
+                <label for="value" class="form-label">Valor</label>
+                <input type="number" step="1" class="form-control" id="value" name="value" placeholder="Digite o valor" required>
+            </div>
+            <div class="mb-3">
+                <label for="nivel_ref" class="form-label">Nível Referente</label>
+                <select class="form-select" id="nivel_ref" name="nivel_ref" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="classe" class="form-label">Crítico</label>
+                <select class="form-select" id="classe" name="classe" required>
+                    <option value="Fogo">Fogo</option>
+                    <option value="Ar">Ar</option>
+                    <option value="Agua">Água</option>
+                    <option value="Terra">Terra</option>
+                </select>
+            </div>
+            <div class="d-absolute mb-3">
+                <a href="../../sair.php" class="btn btn-danger me-5">Sair</a>
+            </div>
+            <button style="margin-left: 60vh;width: 200px;"type="submit" class="btn btn-primary">Proximo (level 1)</button>
         </form>
     </div>
 
-    <div class="d-flex">
-        <a href="sair.php" class="btn btn-danger me-5">Sair</a>
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

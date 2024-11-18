@@ -9,12 +9,22 @@ session_start();
 
     if (!isset($_POST['submit'])) {
         $desc_1 = $_POST['desc_1'];
-        $imagem_1 = $_FILES['imagem_1']['tmp_name'];
         $v_1_1 = $_POST['v_1_1'];
         $v_1_2 = $_POST['v_1_2'];
         $v_1_3 = $_POST['v_1_3'];
         $v_1_4 = $_POST['v_1_4'];
 
-        criar_habilidade_1_atk($desc_1, $imagem_1, $v_1_1, $v_1_2, $v_1_3, $v_1_4, $nome_hab);
+        if( isset($_FILES["photo"]) && !empty($_FILES["photo"])){
+            $nome_aleatorio = uniqid('img_', true);
+            $extensao = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
+            $novo_nome = $nome_aleatorio . '.' . $extensao;
+    
+            $imagem = "../../../../img/" . $novo_nome;
+            $imagem_loc = "./img/". $novo_nome;
+    
+            move_uploaded_file($_FILES["photo"]["tmp_name"] ,$imagem);
+        }
+
+        criar_habilidade_1_atk($desc_1, $imagem_loc, $v_1_1, $v_1_2, $v_1_3, $v_1_4, $nome_hab);
     }
 ?>

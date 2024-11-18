@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="register_page.css">
+    <link rel="stylesheet" href="functions.css">
 </head>
 <body>
-    <div class="container">
-        <div class="box">
-            <form action="login_src.php" method="POST">
-                <h2>Login</h2>
-                <label for="username">Usuário:</label>
-                <input type="text" id="username" name="username" placeholder="Insira seu usuário" required>
-                <br>
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" placeholder="Insira sua senha" required>
-                <br>
-                <button type="submit" name="submit">Enviar</button>
-                <br>
-                <p>Ainda não tem conta? <a href="../register/register_page.php">Registre-se</a></p>
-                <?php
+
+<div class="wrapper">
+        <div class="card-switch">
+            <label class="switch">
+               <input type="checkbox" class="toggle">
+               <span class="slider"></span>
+               <span class="card-side"></span>
+               <div class="flip-card__inner">
+                  <div class="flip-card__front">
+                     <div class="title">Log in</div>
+                     <form class="flip-card__form" action="login_src.php" method="POST">
+                        <input class="flip-card__input" name="username" placeholder="Usuario" type="text">
+                        <input class="flip-card__input" name="password" placeholder="Senha" type="password">
+                        <button class="flip-card__btn">Let`s go!</button>
+                        <?php
 
                 $parametros_get = $_GET;
 
@@ -35,18 +37,33 @@
                 }
                 ## checa se esta errado e da a mensagem
                 ?>
-            </form>
-        </div>
-    </div>
+                     </form>
+                  </div>
+                  <div class="flip-card__back">
+                     <div class="title">Registrar-se</div>
+                     <form class="flip-card__form" action="../register/register_src.php" method="POST">
+                        <input class="flip-card__input" name="username" placeholder="Usuario" type="text">
+                        <input class="flip-card__input" name="password" placeholder="Senha" type="password">
+                        <select name="classe">
+                            <option value="Fogo">Fogo</option>
+                            <option value="Ar">Ar</option>
+                            <option value="Agua">Agua</option>
+                            <option value="Terra">Terra</option>
+                        </select>
+                        <button class="flip-card__btn">Confirmar!</button>
+                     </form>
+                  </div>
+               </div>
+            </label>
+        </div>   
+   </div>
+   <script>
+        function hideParagraph() {
+            const paragraph = document.getElementById('paragraph-to-hide');
+            paragraph.style.display = 'none';
+        }
 
-<script>
-    function hideParagraph() {
-        const paragraph = document.getElementById('paragraph-to-hide');
-        paragraph.style.display = 'none';
-    }
-
-    setTimeout(hideParagraph, 3000); // define o tempo que o paragrafo do "usuario ou senha invalido" fica aparecendo
-</script>
-
+        setTimeout(hideParagraph, 3000); // define o tempo que o paragrafo do "usuario ou senha invalido" fica aparecendo
+    </script>
 </body>
 </html>

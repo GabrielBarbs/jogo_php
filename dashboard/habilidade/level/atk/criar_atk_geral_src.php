@@ -9,23 +9,23 @@ $senha = $_SESSION['senha'];
 
 dashboard($usuario, $senha);
 
-$nome = $_POST['nome'];
+$nome = $_POST['name'];
 
 if (!isset($_POST['submit']) && !checa_habilidade_existe($db, $nome)) {
-    $desc_geral = $_POST['desc_geral'];
-    $preco_hab = $_POST['preco_hab'];
+    $desc_geral = $_POST['description'];
+    $preco_hab = $_POST['value'];
     $nivel_ref = $_POST['nivel_ref'];
     $classe = $_POST['classe'];
     
-    if( isset($_FILES["imagem_hab"]) && !empty($_FILES["imagem_hab"])){
+    if( isset($_FILES["photo"]) && !empty($_FILES["photo"])){
         $nome_aleatorio = uniqid('img_', true);
-        $extensao = pathinfo($_FILES['imagem_hab']['name'], PATHINFO_EXTENSION);
+        $extensao = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
         $novo_nome = $nome_aleatorio . '.' . $extensao;
 
         $imagem = "../../../img/" . $novo_nome;
         $imagem_loc = "./img/". $novo_nome;
 
-        move_uploaded_file($_FILES["imagem_hab"]["tmp_name"] ,$imagem);
+        move_uploaded_file($_FILES["photo"]["tmp_name"] ,$imagem);
     }
 
     if($classe == "Fogo"){

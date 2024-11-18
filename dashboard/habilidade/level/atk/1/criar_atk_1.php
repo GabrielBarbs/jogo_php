@@ -9,58 +9,51 @@
     $senha = $_SESSION['senha'];
 
     dashboard($usuario, $senha);
-
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
-    <style>
-    body{
-    background: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
-    color: white;
-    text-align: center;
-    }
-    .table-bg{
-        background: rgba(0,0,0,0.3);
-        height: 3800px;
-        border-radius:15px 15px 0 0;
-    }
-    </style>
+    <title>Tela de Edição</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1 style="margin-top: 80px">Nivel 1</h1>
-    <form action="criar_atk_1_src.php" method="POST">
-        <p>Descriçao:</p>
-        <textarea name="desc_1" id="desc_1" placeholder="Digite a descriçao do nivel 1" required></textarea>
-        <br>
-        <p>Foto (Nivel 1):</p>
-        <input type="file" name="imagem_1">
-        <br>
-        <p>Dano (Fogo)</p>
-        <input type="text" name="v_1_1" id="v_1_1" placeholder="Digite o dano em fogo (nivel 1)" required>
-        <br>
-        <p>Dano (Ar)</p>
-        <input type="text" name="v_1_2" id="v_1_2" placeholder="Digite o dano em ar (nivel 1)" required>
-        <br>
-        <p>Dano (Agua)</p>
-        <input type="text" name="v_1_3" id="v_1_3" placeholder="Digite o dano em agua (nivel 1)" required>
-        <br>
-        <p>Dano (Terra)</p>
-        <input type="text" name="v_1_4" id="v_1_4" placeholder="Digite o dano em terra (nivel 1)" required>
-        <br>
-        <button type="submit" style="margin-top:50px;">Proxima pagina (Nivel 2)</button>
-    </form>
-
-    <div class="d-flex">
-        <a href="../sair.php" class="btn btn-danger me-5">Sair</a>
+<body class="bg-dark bg-gradient text-white" style="height:862px;">
+    <div class="container mt-5">
+        <h2 class="mb-4">Nivel 1</h2>
+        <form action="criar_atk_1_src.php" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="photo" class="form-label">Foto</label>
+                <input type="file" class="form-control" name="photo">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Descrição</label>
+                <input type="text" class="form-control input-large" id="desc_1" name="desc_1" rows="4" placeholder="Digite a nova descrição" required>
+            </div>
+            <div class="mb-3">
+                <label for="value" class="form-label">Dano em Fogo</label>
+                <input type="number" step="1" class="form-control" id="v_1_1" name="v_1_1" placeholder="Digite o dano" required>
+            </div>
+            <div class="mb-3">
+                <label for="value" class="form-label">Dano em Ar</label>
+                <input type="number" step="1" class="form-control" id="v_1_2" name="v_1_2" placeholder="Digite o dano" required>
+            </div>
+            <div class="mb-3">
+                <label for="value" class="form-label">Dano em Agua</label>
+                <input type="number" step="1" class="form-control" id="v_1_3" name="v_1_3" placeholder="Digite o dano" required>
+            </div>
+            <div class="mb-3">
+                <label for="value" class="form-label">Dano em Terra</label>
+                <input type="number" step="1" class="form-control" id="v_1_4" name="v_1_4" placeholder="Digite o dano" required>
+            </div>
+            <div class="d-absolute mb-3">
+                <a href="../../sair.php" class="btn btn-danger me-5">Sair</a>
+            </div>
+            <button style="margin-left: 60vh;width: 200px;"type="submit" class="btn btn-primary">Proximo (level 2)</button>
+        </form>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 include 'db_usuarios.php';
 
-    if (isset($_POST['submit'])) {
+    if (!isset($_POST['submit'])) {
         $usuario = $_POST['username'];
         $senha = $_POST['password'];
 

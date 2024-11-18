@@ -30,7 +30,7 @@ $result = $db->query("SELECT * FROM habilidade WHERE ID = '$id'");
             </div>
             <div class="mb-3">
                 <label for="photo" class="form-label">Foto</label>
-                <input type="file" class="form-control" id="photo" name="photo" accept="image/*">
+                <input type="file" class="form-control" name="photo">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Descrição</label>

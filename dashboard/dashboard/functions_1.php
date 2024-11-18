@@ -55,6 +55,16 @@ function dashboard($usuario, $senha){
     }
 }
 
+function eAdminIndex($usuario, $senha){
+    if(checaLogado($usuario) == true){
+        if(checaAdmin($usuario) == true){
+            return true;
+        }
+    }else{
+        return false;
+    }
+}
+
 function criar_habilidade_geral_atk($nome, $desc_geral, $nivel_ref, $classe, $imagem_loc, $preco_hab){
 
     include 'db_dash.php';
@@ -88,12 +98,12 @@ function criar_habilidade_geral_atk($nome, $desc_geral, $nivel_ref, $classe, $im
     }
 }
 
-function criar_habilidade_1_atk($desc_1, $imagem_1_loc, $v_1_1, $v_1_2, $v_1_3, $v_1_4, $nome_hab){
+function criar_habilidade_1_atk($desc_1, $imagem_loc, $v_1_1, $v_1_2, $v_1_3, $v_1_4, $nome_hab){
 
     include 'db_dash.php';
 
     $query = "UPDATE habilidade SET desc_1='$desc_1',
-        foto_1='$imagem_1_loc',
+        foto_1='$imagem_loc',
         v_1_1='$v_1_1',
         v_1_2='$v_1_2',
         v_1_3='$v_1_3', 
@@ -108,13 +118,13 @@ function criar_habilidade_1_atk($desc_1, $imagem_1_loc, $v_1_1, $v_1_2, $v_1_3, 
         }
 }
 
-function criar_habilidade_2_atk($desc_2, $imagem_2_loc, $v_2_1, $v_2_2, $v_2_3, $v_2_4, $nome_hab, $preco_2){
+function criar_habilidade_2_atk($desc_2, $imagem_loc, $v_2_1, $v_2_2, $v_2_3, $v_2_4, $nome_hab, $valor){
 
     include 'db_dash.php';
 
     $query = "UPDATE habilidade SET desc_2='$desc_2',
-        preco_2='$preco_2',
-        foto_2='$imagem_2_loc',
+        preco_2='$valor',
+        foto_2='$imagem_loc',
         v_2_1='$v_2_1',
         v_2_2='$v_2_2',
         v_2_3='$v_2_3', 
@@ -129,13 +139,13 @@ function criar_habilidade_2_atk($desc_2, $imagem_2_loc, $v_2_1, $v_2_2, $v_2_3, 
         }
 }
 
-function criar_habilidade_3_atk($desc_3, $imagem_3_loc, $v_3_1, $v_3_2, $v_3_3, $v_3_4, $nome_hab, $preco_3){
+function criar_habilidade_3_atk($desc_3, $imagem_loc, $v_3_1, $v_3_2, $v_3_3, $v_3_4, $nome_hab, $preco_3){
 
     include 'db_dash.php';
 
     $query = "UPDATE habilidade SET desc_3='$desc_3',
         preco_3='$preco_3',
-        foto_3='$imagem_3_loc',
+        foto_3='$imagem_loc',
         v_3_1='$v_3_1',
         v_3_2='$v_3_2',
         v_3_3='$v_3_3', 
@@ -150,13 +160,13 @@ function criar_habilidade_3_atk($desc_3, $imagem_3_loc, $v_3_1, $v_3_2, $v_3_3, 
         }
 }
 
-function criar_habilidade_4_atk($desc_4, $imagem_4_loc, $v_4_1, $v_4_2, $v_4_3, $v_4_4, $nome_hab, $preco_4){
+function criar_habilidade_4_atk($desc_4, $imagem_loc, $v_4_1, $v_4_2, $v_4_3, $v_4_4, $nome_hab, $preco_4){
 
     include 'db_dash.php';
 
     $query = "UPDATE habilidade SET desc_4='$desc_4',
         preco_4='$preco_4',
-        foto_4='$imagem_4_loc',
+        foto_4='$imagem_loc',
         v_4_1='$v_4_1',
         v_4_2='$v_4_2',
         v_4_3='$v_4_3', 
@@ -171,13 +181,13 @@ function criar_habilidade_4_atk($desc_4, $imagem_4_loc, $v_4_1, $v_4_2, $v_4_3, 
         }
 }
 
-function criar_habilidade_5_atk($desc_5, $imagem_5_loc, $v_5_1, $v_5_2, $v_5_3, $v_5_4, $nome_hab, $preco_5){
+function criar_habilidade_5_atk($desc_5, $imagem_loc, $v_5_1, $v_5_2, $v_5_3, $v_5_4, $nome_hab, $preco_5){
 
     include 'db_dash.php';
 
     $query = "UPDATE habilidade SET desc_5='$desc_5',
         preco_5='$preco_5',
-        foto_5='$imagem_5_loc',
+        foto_5='$imagem_loc',
         v_5_1='$v_5_1',
         v_5_2='$v_5_2',
         v_5_3='$v_5_3', 
