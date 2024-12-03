@@ -1,8 +1,9 @@
 <?php
 include '../login/db_usuarios.php';
 include 'functions.php';
+include '../dashboard/dashboard/functions_1.php';
 
-if (!isset($_POST['submit'])) {
+if(!isset($_POST['submit'])){
     $usuario = $_POST['username'];
     $senha = $_POST['password'];
     $classe = $_POST['classe'];
@@ -37,7 +38,15 @@ if (!isset($_POST['submit'])) {
             $classe = "4";
         }
         $result = mysqli_query($db, "INSERT INTO usuarios (username,password,classe,poder,xp,admin) VALUES ('$usuario', '$senha', '$classe','100','0', '0')");
-        if ($result) {
+        if ($result){
+
+            $result2 = $db->query("SELECT * FROM usuarios WHERE username = '$usuario'"); 
+
+            while ($userdata = mysqli_fetch_assoc($result2)){
+                $userId = $userdata['ID'];
+            }
+
+            initializeSlots($userId);
 
             // tem q colocar alguma coisa falando q deu certo criar a conta!
             unset($_SESSION['usuario']);

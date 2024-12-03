@@ -33,6 +33,10 @@ dashboard($usuario, $senha);
                 <input type="file" class="form-control" name="photo">
             </div>
             <div class="mb-3">
+                <label for="photo" class="form-label">Figurinha</label>
+                <input type="file" class="form-control" name="photo_fig">
+            </div>
+            <div class="mb-3">
                 <label for="description" class="form-label">Descrição</label>
                 <input type="text" class="form-control input-large" id="description" name="description" rows="4" placeholder="Digite a descrição" required>
             </div>
@@ -60,7 +64,7 @@ dashboard($usuario, $senha);
                 </select>
             </div>
             <div class="d-absolute mb-3">
-                <a href="../../sair.php" class="btn btn-danger me-5">Sair</a>
+                <a href="sair.php" class="btn btn-danger me-5">Sair</a>
             </div>
             <button style="margin-left: 60vh;width: 200px;"type="submit" class="btn btn-primary">Proximo (level 1)</button>
         </form>

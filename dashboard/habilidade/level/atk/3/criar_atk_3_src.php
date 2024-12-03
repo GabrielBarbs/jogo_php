@@ -9,13 +9,25 @@
 
     if (!isset($_POST['submit'])) {
         $desc_3 = $_POST['desc_3'];
-        $imagem_3 = $_FILES['imagem_3']['tmp_name'];
         $v_3_1 = $_POST['v_3_1'];
         $v_3_2 = $_POST['v_3_2'];
         $v_3_3 = $_POST['v_3_3'];
         $v_3_4 = $_POST['v_3_4'];
-        $preco_3 = $_POST['preco_3'];
+        $preco_3 = $_POST['value'];
 
-        criar_habilidade_3_atk($desc_3, $imagem_3, $v_3_1, $v_3_2, $v_3_3, $v_3_4, $nome_hab, $preco_3);
+        if(isset($_FILES["photo"]) && $_FILES["photo"]["error"] !== UPLOAD_ERR_NO_FILE){
+            $nome_aleatorio = uniqid('img_', true);
+            $extensao = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
+            $novo_nome = $nome_aleatorio . '.' . $extensao;
+    
+            $imagem = "../../../../img/" . $novo_nome;
+            $imagem_loc = "./img/". $novo_nome;
+    
+            move_uploaded_file($_FILES["photo"]["tmp_name"] ,$imagem);
+        }else{
+            $imagem_loc = "";
+        }
+
+        criar_habilidade_3_atk($desc_3, $imagem_loc, $v_3_1, $v_3_2, $v_3_3, $v_3_4, $nome_hab, $preco_3);
     }
 ?>

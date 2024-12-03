@@ -19,15 +19,11 @@ $result = $db->query("SELECT * FROM habilidade WHERE ID = '$id'");
     <title>Tela de Edição</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-dark bg-gradient text-white">
+<body class="bg-dark bg-gradient text-white" style="height: 862px;">
 <?php while ($userdata = mysqli_fetch_assoc($result)) : ?>
     <div class="container mt-5">
-        <h2 class="mb-4">Tela de Edição</h2>
+        <h2 class="mb-4">Tela de Edição / Geral</h2>
         <form action="salvar/geral.php?id=<?php echo $id?>" method="POST" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="name" class="form-label" >Nome</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Digite o novo nome" value="<?php echo $userdata['nome'];?>" required>
-            </div>
             <div class="mb-3">
                 <label for="photo" class="form-label">Foto</label>
                 <input type="file" class="form-control" name="photo">
@@ -59,7 +55,7 @@ $result = $db->query("SELECT * FROM habilidade WHERE ID = '$id'");
                     <option value="Terra" <?php echo ($userdata['critico'] == '4') ? 'selected' : '' ?>>Terra</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="submit" style="margin-left: 60vh;width: 200px;" class="btn btn-primary">Salvar</button>
         </form>
     </div>
 

@@ -15,7 +15,7 @@ session_start();
         $v_2_3 = $_POST['v_2_3'];
         $v_2_4 = $_POST['v_2_4'];
 
-        if( isset($_FILES["photo"]) && !empty($_FILES["photo"])){
+        if(isset($_FILES["photo"]) && $_FILES["photo"]["error"] !== UPLOAD_ERR_NO_FILE){
             $nome_aleatorio = uniqid('img_', true);
             $extensao = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
             $novo_nome = $nome_aleatorio . '.' . $extensao;
@@ -24,6 +24,8 @@ session_start();
             $imagem_loc = "./img/". $novo_nome;
     
             move_uploaded_file($_FILES["photo"]["tmp_name"] ,$imagem);
+        }else{
+            $imagem_loc = "";
         }
 
         criar_habilidade_2_atk($desc_2, $imagem_loc, $v_2_1, $v_2_2, $v_2_3, $v_2_4, $nome_hab, $valor);

@@ -11,8 +11,6 @@ dashboard($usuario, $senha);
 
 $id = $_GET['id'];
 
-$nome = $_POST['name'];
-
 if (!isset($_POST['submit'])) {
     $desc_geral = $_POST['description'];
     $preco_hab = $_POST['value'];
@@ -29,7 +27,7 @@ if (!isset($_POST['submit'])) {
         $classe = "4";
     }
     
-    if(isset($_FILES["photo"]) && !empty($_FILES["photo"])){
+    if(isset($_FILES["photo"]) && $_FILES["photo"]["error"] !== UPLOAD_ERR_NO_FILE){
         $nome_aleatorio = uniqid('img_', true);
         $extensao = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
         $novo_nome = $nome_aleatorio . '.' . $extensao;
@@ -39,9 +37,9 @@ if (!isset($_POST['submit'])) {
 
         move_uploaded_file($_FILES["photo"]["tmp_name"] ,$imagem);
 
-        editar_habilidade_geral_atk_foto($id, $nome, $desc_geral, $nivel_ref, $classe, $imagem_loc, $preco_hab);
+        editar_habilidade_geral_atk_foto($id, $desc_geral, $nivel_ref, $classe, $imagem_loc, $preco_hab);
     }else{
-        editar_habilidade_geral_atk($id, $nome, $desc_geral, $nivel_ref, $classe, $preco_hab);
+        editar_habilidade_geral_atk($id, $desc_geral, $nivel_ref, $classe, $preco_hab);
     }
 }else{
     echo("<h1> Habilidade ja existe! </h1>");
